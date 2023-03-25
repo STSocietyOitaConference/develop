@@ -1,40 +1,59 @@
-import React, { useState } from "react";
-import { Link, Box, Typography, Dialog } from "@mui/material";
+import * as React from "react";
 
-const ImageDialog = (props: any) => {
-  /** 画面パラメータ */
-  const [dialogOpenF, setDialogOpenF] = useState(false);
+import Dialog from "@mui/material/Dialog";
 
-  /**
-   * コンポーネントに渡す引数
-   */
-  const compProps = {
-    bookShowDialog: {
-      open: dialogOpenF, //ダイアログの表示プローアティ
-      bookParam: props.bookParam,
-      onClose: () => setDialogOpenF(false), //ダイアログ非表示処理
-    },
-    showLink: {
-      href: "#",
-      onClick: () => setDialogOpenF(true), //ダイアログ表示処理
-    },
+import { CardMedia } from "@mui/material";
+import { bookParam } from "../components/Schedule";
+
+export interface SimpleDialogProps {
+  open: boolean;
+  imageValue: string;
+  onClose: () => void;
+}
+
+function SimpleDialog(props: SimpleDialogProps) {
+  const handleClose = () => {
+    props.onClose();
   };
 
   return (
-    <Box>
-      {/* 画像の表示 */}
-      <Link {...compProps.showLink}>
-        <img
-          src={props.bookParam.image}
-          alt={"スケジュール" + props.bookParam.id}
-          style={{ maxWidth: props.bookParam.sizePer + "%" }}
+    <Dialog onClose={handleClose} open={props.open} maxWidth={"lg"}>
+      {
+        <CardMedia
+          component="img"
+          image={props.imageValue}
+          title={"スケジュール"}
+          onClick={handleClose}
         />
-      </Link>
-
-      {/* ダイアログの表示 */}
-      <Dialog {...compProps.bookShowDialog} />
-    </Box>
+      }
+    </Dialog>
   );
-};
+}
 
-export default ImageDialog;
+export default function ImageDialog(props: bookParam) {
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <CardMedia
+        component="img"
+        image={props.image}
+        title={"スケジュール" + props.id}
+        onClick={handleClickOpen}
+        style={{ height: "50vh" }}
+      />
+      <SimpleDialog
+        imageValue={props.image}
+        open={open}
+        onClose={handleClose}
+      />
+    </div>
+  );
+}

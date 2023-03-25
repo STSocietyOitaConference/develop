@@ -11,20 +11,19 @@ import Downloads from "./components/Downloads";
 import AbstractRegistration from "./components/AbstractRegistration";
 import Inquiry from "./components/Inquiry";
 import Advertisement from "./components/Advertisement";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import {
+  AppBar,
+  Box,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Grid,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
 
 const drawerWidth = 240;
 interface Props {
@@ -44,11 +43,11 @@ function Main(props: Props) {
   };
 
   const drawer = (
-    <div>
+    <div style={{ backgroundColor: "#fcfaea", height: "100%" }}>
       <Toolbar />
-      <Divider />
       <List>
         {[
+          "TOP",
           "紹介VTR",
           "会長挨拶",
           "概要",
@@ -67,38 +66,31 @@ function Main(props: Props) {
           </ListItem>
         ))}
       </List>
-      <Divider />
     </div>
   );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
-    <div style={{ marginLeft: "0%" }}>
+    <div style={{ backgroundColor: "#fcfaea" }}>
       <Box sx={{ display: "flex" }}>
-        <CssBaseline />
         <AppBar
-          style={{ backgroundColor: "#25C49F" }}
+          style={{ backgroundColor: "#fcfaea" }}
           position="fixed"
           sx={{
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             ml: { sm: `${drawerWidth}px` },
           }}
         >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              日本言語聴覚士協会
-            </Typography>
-          </Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
         </AppBar>
         <Box
           component="nav"
@@ -147,46 +139,41 @@ function Main(props: Props) {
           }}
         >
           <Toolbar />
-          <Grid
-            container
-            spacing={12}
-            direction="column"
-            justifyContent="center"
-          >
-            <Grid item xs={12}>
+          <Grid container direction="column" justifyContent="center">
+            <Grid item xs={2} sm={4} md={4}>
               <Title />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <WhatNew />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <IntroVideo />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <Greeting />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <Summary />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <Program />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <Schedule />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <Registration />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <AbstractRegistration />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <Downloads />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <Inquiry />
             </Grid>
-            <Grid item>
+            <Grid item xs={2} sm={4} md={4}>
               <Advertisement />
             </Grid>
           </Grid>

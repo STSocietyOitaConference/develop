@@ -1,35 +1,66 @@
 import React from "react";
-import { Typography, ListItemText, Button, Link } from "@mui/material";
+import { Typography, ListItemText, Button, Link, Grid } from "@mui/material";
 function AbstractRegistration() {
   return (
     <div
-      id="item_6"
+      id="item_7"
       className="AbstractRegistration"
-      style={{ textAlign: "center" }}
+      style={{ maxHeight: "40vh" }}
     >
-      <Typography variant="h4" style={{ textAlign: "center" }}></Typography>
-      <Typography></Typography>
-      <ListItemText
-        primary="演題登録"
-        primaryTypographyProps={{
-          color: "#222222",
-          variant: "h4",
-          textAlign: "center",
-        }}
-        secondary="大会の概要およびプログラムを下記からダウンロードできます。"
-        secondaryTypographyProps={{
-          color: "red",
-          variant: "h6",
-          textAlign: "center",
-        }}
-      />
-      <Button variant="contained" size="large">
-        <Link href="src\dawnload\img.png" download="img.png">
-          <Typography style={{ color: "white" }}>
-            サンプルCSVダウンロード
+      <Grid
+        container
+        flexDirection="column"
+        textAlign="center"
+        alignItems="center"
+        sx={{ mx: "auto" }}
+      >
+        <Grid item mb={"4vh"}>
+          <ListItemText
+            primary="参加登録"
+            primaryTypographyProps={{
+              variant: "h4",
+            }}
+            secondary="案内のダウンロードと、大会の参加登録ができます。"
+            secondaryTypographyProps={{
+              color: "secondary",
+              variant: "h6",
+            }}
+          />
+        </Grid>
+        <Grid
+          item
+          mb={"8vh"}
+          container
+          direction={"column"}
+          alignItems="canter" //左寄せよせの場合はflex-start
+        >
+          <Typography variant="h6" color="secondary">
+            演題登録期間：2023/2/10 ～2023/3/10
           </Typography>
-        </Link>
-      </Button>
+        </Grid>
+        <Grid item>
+          <Grid container>
+            <Grid item mr={"5vw"}>
+              <Button variant="contained" size="large">
+                <Link href="src\dawnload\img.png" download="img.png">
+                  <Typography style={{ color: "white" }}>
+                    ダウンロード
+                  </Typography>
+                </Link>
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant="contained" size="large">
+                <Link href="src\dawnload\img.png" download="img.png">
+                  <Typography style={{ color: "white" }}>
+                    登録フォーム
+                  </Typography>
+                </Link>
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 }
