@@ -1,10 +1,17 @@
 import React from "react";
 import { Typography, CardMedia, Grid, Link, Box } from "@mui/material";
 import SampleImage1 from "../assets/advertisement/sample1.jpg";
+import { useInView } from "react-intersection-observer";
+import "animate.css";
 function Advertisement() {
   const myStyleBox = {
-    width: { sm: 200, md: 200 },
+    //width: { sm: 200, md: 500 },
   };
+  const { ref, inView } = useInView({
+    // オプション
+    rootMargin: "-50px", // ref要素が現れてから50px過ぎたら
+    triggerOnce: true, // 最初の一度だけ実行
+  });
   const adList = [
     {
       name: "うまるちゃん",
@@ -38,44 +45,53 @@ function Advertisement() {
     },
   ];
   return (
-    <Grid
-      id="item_10"
+    <Box
       className="Advertisement"
-      style={{ maxHeight: "90vh" }}
-      container
-      flexDirection={"column"}
-      alignItems="center"
-      spacing={{ xs: 4, sm: 8, md: 4 }}
+      sx={myStyleBox}
+      justifyContent="center"
+      ref={ref}
     >
-      <Grid item>
-        <Typography variant="h4" mb={3}>
-          広告
-        </Typography>
-      </Grid>
       <Grid
-        item
+        id="item_10"
         container
-        flexDirection={"row"}
-        spacing={{ xs: 4, sm: 8, md: 12 }}
-        justifyContent="space-around"
+        flexDirection={"column"}
         alignItems="center"
-        xs={4}
-        sm={6}
-        md={6}
+        className="animate__animated animate__fadeInUp"
       >
-        {adList.map((_item, _index) => (
-          <Grid item xs={4} md={3} key={_index}>
-            <Link href={_item.url}>
-              <CardMedia
-                component="img"
-                image={_item.image}
-                title={"広告" + _index}
-              />
-            </Link>
-          </Grid>
-        ))}
+        <Grid item>
+          {inView && (
+            <Typography variant="h4" mb={3}>
+              広告
+            </Typography>
+          )}
+        </Grid>
+        <Grid
+          item
+          container
+          flexDirection={"row"}
+          //spacing={{ xs: 4, sm: 8, md: 1 }}
+          justifyContent="space-around"
+          alignItems="center"
+          xs={4}
+          sm={6}
+          md={6}
+          gridTemplateColumns="repeat(auto-fit, minmax(200px, 1fr))"
+          gap=" 24px 6%"
+        >
+          {adList.map((_item, _index) => (
+            <Grid item xs={4} md={3} key={_index}>
+              <Link href={_item.url}>
+                <CardMedia
+                  component="img"
+                  image={_item.image}
+                  title={"広告" + _index}
+                />
+              </Link>
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
-    </Grid>
+    </Box>
   );
 }
 

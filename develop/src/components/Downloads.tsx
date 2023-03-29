@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Typography,
   Grid,
@@ -7,9 +8,12 @@ import {
   ListItemButton,
   ListItemText,
   IconButton,
+  Box,
 } from "@mui/material";
 import Button from "@mui/material/Button";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import { useInView } from "react-intersection-observer";
+import "animate.css";
 
 const dowonloadInfo = [
   ["ダウンロードファイル名1", "備考1"],
@@ -19,76 +23,85 @@ const dowonloadInfo = [
   ["ダウンロードファイル名5", "備考5"],
 ];
 function Downloads() {
+  const { ref, inView } = useInView({
+    // オプション
+    rootMargin: "-50px", // ref要素が現れてから50px過ぎたら
+    triggerOnce: true, // 最初の一度だけ実行
+  });
   return (
-    <Grid
-      id="item_8"
-      className="Downloads"
-      container
-      direction="column"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Grid item xs={12} md={6}>
-        <Typography variant="h4" align="center" mb={3}>
-          各種ダウンロード
-        </Typography>
-      </Grid>
+    <Box id="item_8" ref={ref} className="Downloads">
       <Grid
-        item
+        className="animate__animated animate__fadeInUp"
         container
+        direction="column"
         justifyContent="center"
         alignItems="center"
-        xs={12}
-        md={6}
+        mb={6}
       >
-        <Grid item container justifyContent="space-between" xs={12} md={6}>
-          {dowonloadInfo.map((item: any, _index) => {
-            return (
-              <ListItem disablePadding key={_index}>
-                <Grid item container>
-                  <ListItemButton
-                    sx={{
-                      borderBottom: 0.5,
-                      borderColor: "#e6e6e6",
-                    }}
-                    disableRipple
-                  >
-                    <Grid
-                      item
-                      container
-                      flexDirection="column"
-                      justifyContent="space-between"
+        <Grid item xs={12} md={6}>
+          {inView && (
+            <Typography variant="h4" align="center" mb={3}>
+              各種ダウンロード
+            </Typography>
+          )}
+        </Grid>
+        <Grid
+          item
+          container
+          justifyContent="center"
+          alignItems="center"
+          xs={12}
+          md={6}
+        >
+          <Grid item container justifyContent="space-between" xs={12} md={6}>
+            {dowonloadInfo.map((item: any, _index) => {
+              return (
+                <ListItem disablePadding key={_index}>
+                  <Grid item container>
+                    <ListItemButton
+                      sx={{
+                        borderBottom: 0.5,
+                        borderColor: "#e6e6e6",
+                      }}
+                      disableRipple
                     >
-                      <ListItemText
-                        primary={item[0]}
-                        primaryTypographyProps={{
-                          color: "secondary",
-                        }}
-                      />
-                      <ListItemText
-                        primary={item[1]}
-                        primaryTypographyProps={{
-                          color: "secondary",
-                        }}
-                      />
-                    </Grid>
-                    <Grid item>
-                      <IconButton
-                        color="primary"
-                        aria-label="upload picture"
-                        component="label"
+                      <Grid
+                        item
+                        container
+                        flexDirection="column"
+                        justifyContent="space-between"
                       >
-                        <FileDownloadOutlinedIcon />
-                      </IconButton>
-                    </Grid>
-                  </ListItemButton>
-                </Grid>
-              </ListItem>
-            );
-          })}
+                        <ListItemText
+                          primary={item[0]}
+                          primaryTypographyProps={{
+                            color: "secondary",
+                          }}
+                        />
+                        <ListItemText
+                          primary={item[1]}
+                          primaryTypographyProps={{
+                            color: "secondary",
+                          }}
+                        />
+                      </Grid>
+                      <Grid item>
+                        <IconButton
+                          color="primary"
+                          aria-label="upload picture"
+                          component="label"
+                        >
+                          <FileDownloadOutlinedIcon />
+                        </IconButton>
+                      </Grid>
+                    </ListItemButton>
+                  </Grid>
+                </ListItem>
+              );
+            })}
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Box>
   );
 }
 

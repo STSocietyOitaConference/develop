@@ -36,7 +36,7 @@ function Title() {
             fontWeight: "bold",
             textAlign: "center",
           }}
-          secondary="〜うんちが出そう〜"
+          secondary="〜サブタイトル〜"
           secondaryTypographyProps={{
             variant: "h6",
             textAlign: "center",

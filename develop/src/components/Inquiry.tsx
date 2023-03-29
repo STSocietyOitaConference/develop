@@ -3,6 +3,8 @@ import Typography from "@mui/material/Typography";
 import { init, send } from "@emailjs/browser";
 import { Grid, TextField, Button } from "@mui/material";
 import { Box } from "@mui/system";
+import { useInView } from "react-intersection-observer";
+import "animate.css";
 
 const myStyleText = {
   "& .MuiInputBase-input": {
@@ -27,6 +29,11 @@ const myStyleButtonLarge = {
 };
 
 function Inquiry() {
+  const { ref, inView } = useInView({
+    // オプション
+    rootMargin: "-50px", // ref要素が現れてから50px過ぎたら
+    triggerOnce: true, // 最初の一度だけ実行
+  });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
@@ -34,83 +41,87 @@ function Inquiry() {
   const [emailErrorAddress, setEmailErrorAddress] = React.useState("");
   const [emailErrorContent, setEmailErrorContent] = React.useState("");
   return (
-    <Box id="item_9" className="Inquiry" style={{ height: "70vh" }}>
-      <form onSubmit={(e) => onSubmit(e)}>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Grid item mb={7}>
-            <Typography variant="h4">お問い合わせ</Typography>
-          </Grid>
-          <Grid item xs={6} md={6} mb={3}>
-            <TextField
-              id="name"
-              label="お名前"
-              variant="outlined"
-              size="small"
-              error={!!emailErrorName}
-              helperText={emailErrorName}
-              onChange={(e) => setName(e.target.value)}
-              color="secondary"
-              sx={myStyleText}
-            />
-          </Grid>
-          <Grid item xs={6} md={6} mb={3}>
-            <TextField
-              id="email"
-              label="メールアドレス"
-              variant="outlined"
-              size="small"
-              error={!!emailErrorAddress}
-              helperText={emailErrorAddress}
-              onChange={(e) => setEmail(e.target.value)}
-              color="secondary"
-              sx={myStyleText}
-            />
-          </Grid>
-          <Grid item xs={6} md={6} mb={3}>
-            <TextField
-              id="content"
-              label="お問い合わせ内容"
-              multiline
-              variant="outlined"
-              error={!!emailErrorContent}
-              helperText={emailErrorContent}
-              onChange={(e) => setContent(e.target.value)}
-              color="secondary"
-              sx={myStyleText}
-            />
-          </Grid>
-          <Grid item xs={6} md={6}>
-            <Box
-              sx={myStyleBox}
-              display="flex"
-              alignItems="flex-end"
-              justifyContent="flex-end"
-            >
-              <Button
-                type="submit"
-                variant="contained"
+    <Box id="item_9" className="Inquiry" style={{ height: "50vh" }} ref={ref}>
+      {inView && (
+        <form onSubmit={(e) => onSubmit(e)}>
+          <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            className="animate__animated animate__fadeInUp"
+          >
+            <Grid item mb={7}>
+              <Typography variant="h4">お問い合わせ</Typography>
+            </Grid>
+
+            <Grid item xs={6} md={6} mb={3}>
+              <TextField
+                id="name"
+                label="お名前"
+                variant="outlined"
                 size="small"
-                sx={myStyleButtonSmall}
+                error={!!emailErrorName}
+                helperText={emailErrorName}
+                onChange={(e) => setName(e.target.value)}
+                color="secondary"
+                sx={myStyleText}
+              />
+            </Grid>
+            <Grid item xs={6} md={6} mb={3}>
+              <TextField
+                id="email"
+                label="メールアドレス"
+                variant="outlined"
+                size="small"
+                error={!!emailErrorAddress}
+                helperText={emailErrorAddress}
+                onChange={(e) => setEmail(e.target.value)}
+                color="secondary"
+                sx={myStyleText}
+              />
+            </Grid>
+            <Grid item xs={6} md={6} mb={3}>
+              <TextField
+                id="content"
+                label="お問い合わせ内容"
+                multiline
+                variant="outlined"
+                error={!!emailErrorContent}
+                helperText={emailErrorContent}
+                onChange={(e) => setContent(e.target.value)}
+                color="secondary"
+                sx={myStyleText}
+              />
+            </Grid>
+            <Grid item xs={6} md={6}>
+              <Box
+                sx={myStyleBox}
+                display="flex"
+                alignItems="flex-end"
+                justifyContent="flex-end"
               >
-                送信
-              </Button>
-              <Button
-                type="submit"
-                variant="contained"
-                size="large"
-                sx={myStyleButtonLarge}
-              >
-                送信
-              </Button>
-            </Box>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  size="small"
+                  sx={myStyleButtonSmall}
+                >
+                  送信
+                </Button>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  size="large"
+                  sx={myStyleButtonLarge}
+                >
+                  送信
+                </Button>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </form>
+        </form>
+      )}
     </Box>
   );
 }

@@ -24,6 +24,7 @@ import {
   Grid,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useInView } from "react-intersection-observer";
 
 const drawerWidth = 240;
 interface Props {
@@ -83,7 +84,7 @@ function Main(props: Props) {
           }}
         >
           <IconButton
-            color="inherit"
+            color="primary"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -164,16 +165,18 @@ function Main(props: Props) {
             <Grid item xs={2} sm={4} md={4}>
               <Registration />
             </Grid>
-            <Grid item xs={2} sm={4} md={4}>
+            <Grid item>
               <AbstractRegistration />
             </Grid>
-            <Grid item xs={2} sm={4} md={4}>
+
+            <Grid item>
               <Downloads />
             </Grid>
-            <Grid item xs={2} sm={4} md={4}>
+
+            <Grid item>
               <Inquiry />
             </Grid>
-            <Grid item xs={2} sm={4} md={4}>
+            <Grid item>
               <Advertisement />
             </Grid>
           </Grid>
