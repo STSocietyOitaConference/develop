@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/https://github.com/STSocietyOitaConference/develop.git/static/css/main.0b79e6dd.css",
-    "main.js": "/https://github.com/STSocietyOitaConference/develop.git/static/js/main.268d5f02.js",
-    "static/js/787.28cb0dcd.chunk.js": "/https://github.com/STSocietyOitaConference/develop.git/static/js/787.28cb0dcd.chunk.js",
-    "static/media/sampleImage_cat.jpg": "/https://github.com/STSocietyOitaConference/develop.git/static/media/sampleImage_cat.9afbea18baf5067ec1d0.jpg",
-    "static/media/sample2.jpg": "/https://github.com/STSocietyOitaConference/develop.git/static/media/sample2.6b11a30632e85cfcf95b.jpg",
-    "static/media/sampleImage_dog.jpg": "/https://github.com/STSocietyOitaConference/develop.git/static/media/sampleImage_dog.94a360199aab90b17f1f.jpg",
-    "static/media/sample1.jpg": "/https://github.com/STSocietyOitaConference/develop.git/static/media/sample1.97000f9a27cec8dc6297.jpg",
-    "index.html": "/https://github.com/STSocietyOitaConference/develop.git/index.html",
-    "main.0b79e6dd.css.map": "/https://github.com/STSocietyOitaConference/develop.git/static/css/main.0b79e6dd.css.map",
-    "main.268d5f02.js.map": "/https://github.com/STSocietyOitaConference/develop.git/static/js/main.268d5f02.js.map",
-    "787.28cb0dcd.chunk.js.map": "/https://github.com/STSocietyOitaConference/develop.git/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/css/main.0b79e6dd.css",
+    "main.js": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/js/main.9541ad96.js",
+    "static/js/787.28cb0dcd.chunk.js": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/js/787.28cb0dcd.chunk.js",
+    "static/media/sampleImage_cat.jpg": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/media/sampleImage_cat.9afbea18baf5067ec1d0.jpg",
+    "static/media/sample2.jpg": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/media/sample2.6b11a30632e85cfcf95b.jpg",
+    "static/media/sampleImage_dog.jpg": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/media/sampleImage_dog.94a360199aab90b17f1f.jpg",
+    "static/media/sample1.jpg": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/media/sample1.97000f9a27cec8dc6297.jpg",
+    "index.html": "/https://github.com/https://stsocietyoitaconference.github.io/develop/index.html",
+    "main.0b79e6dd.css.map": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/css/main.0b79e6dd.css.map",
+    "main.9541ad96.js.map": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/js/main.9541ad96.js.map",
+    "787.28cb0dcd.chunk.js.map": "/https://github.com/https://stsocietyoitaconference.github.io/develop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0b79e6dd.css",
-    "static/js/main.268d5f02.js"
+    "static/js/main.9541ad96.js"
   ]
 }
