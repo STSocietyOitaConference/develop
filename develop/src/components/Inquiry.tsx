@@ -12,6 +12,18 @@ const myStyleText = {
   },
   width: { sm: 200, md: 500 },
 };
+const myStyleMultiTextSmall = {
+  "& .MuiInputBase-input": {
+    color: "#6f5b41", // 入力文字の色
+  },
+  display: { xs: "block", sm: "none" },
+};
+const myStyleMultiTextLarge = {
+  "& .MuiInputBase-input": {
+    color: "#6f5b41", // 入力文字の色
+  },
+  display: { xs: "none", sm: "block" },
+};
 const myStyleBox = {
   width: { sm: 200, md: 500 },
 };
@@ -54,71 +66,88 @@ function Inquiry() {
             <Grid item mb={7}>
               <Typography variant="h4">お問い合わせ</Typography>
             </Grid>
-
-            <Grid item xs={6} md={6} mb={3}>
-              <TextField
-                id="name"
-                label="お名前"
-                variant="outlined"
-                size="small"
-                error={!!emailErrorName}
-                helperText={emailErrorName}
-                onChange={(e) => setName(e.target.value)}
-                color="secondary"
-                sx={myStyleText}
-              />
-            </Grid>
-            <Grid item xs={6} md={6} mb={3}>
-              <TextField
-                id="email"
-                label="メールアドレス"
-                variant="outlined"
-                size="small"
-                error={!!emailErrorAddress}
-                helperText={emailErrorAddress}
-                onChange={(e) => setEmail(e.target.value)}
-                color="secondary"
-                sx={myStyleText}
-              />
-            </Grid>
-            <Grid item xs={6} md={6} mb={3}>
-              <TextField
-                id="content"
-                label="お問い合わせ内容"
-                multiline
-                variant="outlined"
-                error={!!emailErrorContent}
-                helperText={emailErrorContent}
-                onChange={(e) => setContent(e.target.value)}
-                color="secondary"
-                sx={myStyleText}
-              />
-            </Grid>
-            <Grid item xs={6} md={6}>
-              <Box
-                sx={myStyleBox}
-                display="flex"
-                alignItems="flex-end"
-                justifyContent="flex-end"
-              >
-                <Button
-                  type="submit"
-                  variant="contained"
+            <Box>
+              <Grid item mb={3}>
+                <TextField
+                  id="name"
+                  label="お名前"
+                  variant="outlined"
                   size="small"
-                  sx={myStyleButtonSmall}
+                  error={!!emailErrorName}
+                  helperText={emailErrorName}
+                  onChange={(e) => setName(e.target.value)}
+                  color="secondary"
+                  sx={myStyleText}
+                />
+              </Grid>
+              <Grid item mb={3}>
+                <TextField
+                  id="email"
+                  label="メールアドレス"
+                  variant="outlined"
+                  size="small"
+                  error={!!emailErrorAddress}
+                  helperText={emailErrorAddress}
+                  onChange={(e) => setEmail(e.target.value)}
+                  color="secondary"
+                  sx={myStyleText}
+                />
+              </Grid>
+              <Grid item mb={3}>
+                <TextField
+                  id="content"
+                  label="お問い合わせ内容"
+                  multiline
+                  rows={4}
+                  variant="outlined"
+                  error={!!emailErrorContent}
+                  helperText={emailErrorContent}
+                  onChange={(e) => setContent(e.target.value)}
+                  color="secondary"
+                  fullWidth
+                  sx={myStyleMultiTextSmall}
+                />
+
+                <TextField
+                  id="content"
+                  label="お問い合わせ内容"
+                  multiline
+                  rows={4}
+                  variant="outlined"
+                  error={!!emailErrorContent}
+                  helperText={emailErrorContent}
+                  onChange={(e) => setContent(e.target.value)}
+                  color="secondary"
+                  fullWidth
+                  sx={myStyleMultiTextLarge}
+                />
+              </Grid>
+              <Grid item>
+                <Box
+                  sx={myStyleBox}
+                  display="flex"
+                  alignItems="flex-end"
+                  justifyContent="flex-end"
                 >
-                  送信
-                </Button>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  size="large"
-                  sx={myStyleButtonLarge}
-                >
-                  送信
-                </Button>
-              </Box>
-            </Grid>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    size="small"
+                    sx={myStyleButtonSmall}
+                  >
+                    送信
+                  </Button>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    size="large"
+                    sx={myStyleButtonLarge}
+                  >
+                    送信
+                  </Button>
+                </Box>
+              </Grid>
+            </Box>
           </Grid>
         </form>
       )}

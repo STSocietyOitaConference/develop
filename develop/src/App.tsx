@@ -39,9 +39,9 @@ function App() {
     },
   };
   theme.typography.h6 = {
-    fontSize: "1.2rem",
+    fontSize: "1rem",
     "@media (min-width:600px)": {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
     },
     [theme.breakpoints.up("md")]: {
       fontSize: "1.3rem",

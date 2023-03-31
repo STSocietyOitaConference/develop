@@ -26,30 +26,43 @@ function Schedule() {
     triggerOnce: true, // 最初の一度だけ実行
   });
   return (
-    <div className="Schedule" id="item_5" ref={ref}>
+    <Box className="Schedule" id="item_5" ref={ref}>
       {inView && (
-        <Box>
-          <Typography variant="h4" style={{ textAlign: "center" }} mb={3}>
-            スケジュール
-          </Typography>
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            margin="auto"
-            spacing={3}
-            mb={6}
-            className="animate__animated animate__fadeInUp"
-          >
-            {bookList.map((item, index) => (
-              <Grid item key={index} xs={5}>
-                <ImageDialog {...item} />
-              </Grid>
-            ))}
+        <Grid
+          container
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          spacing={3}
+          mb={6}
+          className="animate__animated animate__fadeInUp"
+        >
+          <Grid item>
+            <Typography variant="h4" style={{ textAlign: "center" }} mb={3}>
+              スケジュール
+            </Typography>
           </Grid>
-        </Box>
+          <Grid item>
+            <Box>
+              <Grid
+                container
+                direction="row"
+                justifyContent="space-evenly"
+                alignItems="center"
+                mx="auto"
+                mb={6}
+              >
+                {bookList.map((item, index) => (
+                  <Grid item key={index} xs={5} md={6}>
+                    <ImageDialog {...item} />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </Grid>
+        </Grid>
       )}
-    </div>
+    </Box>
   );
 }
 

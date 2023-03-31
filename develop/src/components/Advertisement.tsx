@@ -4,9 +4,6 @@ import SampleImage1 from "../assets/advertisement/sample1.jpg";
 import { useInView } from "react-intersection-observer";
 import "animate.css";
 function Advertisement() {
-  const myStyleBox = {
-    //width: { sm: 200, md: 500 },
-  };
   const { ref, inView } = useInView({
     // オプション
     rootMargin: "-50px", // ref要素が現れてから50px過ぎたら
@@ -45,12 +42,8 @@ function Advertisement() {
     },
   ];
   return (
-    <Box
-      className="Advertisement"
-      sx={myStyleBox}
-      justifyContent="center"
-      ref={ref}
-    >
+    <Box className="Advertisement" ref={ref}>
+      {/* {inView && ( */}
       <Grid
         id="item_10"
         container
@@ -59,27 +52,13 @@ function Advertisement() {
         className="animate__animated animate__fadeInUp"
       >
         <Grid item>
-          {inView && (
-            <Typography variant="h4" mb={3}>
-              広告
-            </Typography>
-          )}
+          <Typography variant="h4" mb={3}>
+            広告
+          </Typography>
         </Grid>
-        <Grid
-          item
-          container
-          flexDirection={"row"}
-          //spacing={{ xs: 4, sm: 8, md: 1 }}
-          justifyContent="space-around"
-          alignItems="center"
-          xs={4}
-          sm={6}
-          md={6}
-          gridTemplateColumns="repeat(auto-fit, minmax(200px, 1fr))"
-          gap=" 24px 6%"
-        >
+        <Grid item container spacing={{ xs: `30`, md: `50` }}>
           {adList.map((_item, _index) => (
-            <Grid item xs={4} md={3} key={_index}>
+            <Grid item key={_index} xs={6} md={4}>
               <Link href={_item.url}>
                 <CardMedia
                   component="img"
@@ -91,6 +70,7 @@ function Advertisement() {
           ))}
         </Grid>
       </Grid>
+      {/* )} */}
     </Box>
   );
 }

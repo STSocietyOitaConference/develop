@@ -83,15 +83,16 @@ function Main(props: Props) {
             ml: { sm: `${drawerWidth}px` },
           }}
         >
-          <IconButton
-            color="primary"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Grid container sx={{ display: { sm: "none" } }} ml={1}>
+            <IconButton
+              color="primary"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Grid>
         </AppBar>
         <Box
           component="nav"
@@ -140,46 +141,51 @@ function Main(props: Props) {
           }}
         >
           <Toolbar />
-          <Grid container direction="column" justifyContent="center">
-            <Grid item xs={2} sm={4} md={4}>
-              <Title />
+          <Box sx={{ width: { xs: `100%`, md: `60%` }, mx: `auto` }}>
+            <Grid
+              container
+              direction="column"
+              justifyContent="center"
+              mx={"auto"}
+            >
+              <Grid item xs={2} sm={4} md={8}>
+                <Title />
+              </Grid>
+              <Grid item xs={2} sm={4} md={4}>
+                <WhatNew />
+              </Grid>
+              <Grid item xs={2} sm={4} md={4}>
+                <IntroVideo />
+              </Grid>
+              <Grid item xs={2} sm={4} md={4}>
+                <Greeting />
+              </Grid>
+              <Grid item xs={2} sm={4} md={4}>
+                <Summary />
+              </Grid>
+              <Grid item xs={2} sm={4} md={4}>
+                <Program />
+              </Grid>
+              <Grid item xs={2} sm={4} md={4}>
+                <Schedule />
+              </Grid>
+              <Grid item xs={2} sm={4} md={4}>
+                <Registration />
+              </Grid>
+              <Grid item>
+                <AbstractRegistration />
+              </Grid>
+              <Grid item>
+                <Downloads />
+              </Grid>
+              <Grid item mb={12}>
+                <Inquiry />
+              </Grid>
+              <Grid item>
+                <Advertisement />
+              </Grid>
             </Grid>
-            <Grid item xs={2} sm={4} md={4}>
-              <WhatNew />
-            </Grid>
-            <Grid item xs={2} sm={4} md={4}>
-              <IntroVideo />
-            </Grid>
-            <Grid item xs={2} sm={4} md={4}>
-              <Greeting />
-            </Grid>
-            <Grid item xs={2} sm={4} md={4}>
-              <Summary />
-            </Grid>
-            <Grid item xs={2} sm={4} md={4}>
-              <Program />
-            </Grid>
-            <Grid item xs={2} sm={4} md={4}>
-              <Schedule />
-            </Grid>
-            <Grid item xs={2} sm={4} md={4}>
-              <Registration />
-            </Grid>
-            <Grid item>
-              <AbstractRegistration />
-            </Grid>
-
-            <Grid item>
-              <Downloads />
-            </Grid>
-
-            <Grid item>
-              <Inquiry />
-            </Grid>
-            <Grid item>
-              <Advertisement />
-            </Grid>
-          </Grid>
+          </Box>
         </Box>
       </Box>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { ListItemText, Link, Typography, Button, Grid } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import "animate.css";
+import { Box } from "@mui/system";
 
 function Program() {
   const { ref, inView } = useInView({
@@ -10,7 +11,8 @@ function Program() {
     triggerOnce: true, // 最初の一度だけ実行
   });
   return (
-    <div
+    <Box
+      component="div"
       id="item_4"
       className="AbstractRegistration"
       style={{ height: "40vh" }}
@@ -25,7 +27,7 @@ function Program() {
           sx={{ mx: "auto" }}
           className="animate__animated animate__fadeInUp"
         >
-          <Grid item mb={"4vh"}>
+          <Grid item mb={1}>
             <ListItemText
               primary="プログラム"
               primaryTypographyProps={{
@@ -40,7 +42,7 @@ function Program() {
           </Grid>
           <Grid
             item
-            mb={"8vh"}
+            mb={8}
             container
             direction={"column"}
             alignItems="canter" //左寄せよせの場合はflex-start
@@ -73,7 +75,7 @@ function Program() {
           </Grid>
         </Grid>
       )}
-    </div>
+    </Box>
   );
 }
 

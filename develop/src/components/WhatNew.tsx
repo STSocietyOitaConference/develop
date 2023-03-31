@@ -29,7 +29,7 @@ const informations = [
 function WhatNew() {
   const { ref, inView } = useInView({
     // オプション
-    rootMargin: "-50px", // ref要素が現れてから50px過ぎたら
+    rootMargin: "-200px", // ref要素が現れてから50px過ぎたら
     triggerOnce: true, // 最初の一度だけ実行
   });
   const myStyleList = {
@@ -43,14 +43,12 @@ function WhatNew() {
         justifyContent="center"
         alignItems="center"
         mb={6}
-        className="animate__animated animate__fadeInUp"
+        className="animate__animated animate__fadeInUp animate__delay-3s"
       >
         <Grid item xs={12} md={6}>
-          {inView && (
-            <Typography variant="h4" align="center" mb={3}>
-              お知らせ
-            </Typography>
-          )}
+          <Typography variant="h4" align="center" mb={3}>
+            お知らせ
+          </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
           {informations.map((item: any, _index) => {

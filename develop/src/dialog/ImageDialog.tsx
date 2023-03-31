@@ -4,6 +4,7 @@ import Dialog from "@mui/material/Dialog";
 
 import { CardMedia } from "@mui/material";
 import { bookParam } from "../components/Schedule";
+import Box from "@mui/material/Box";
 
 export interface SimpleDialogProps {
   open: boolean;
@@ -41,19 +42,18 @@ export default function ImageDialog(props: bookParam) {
   };
 
   return (
-    <div>
+    <Box>
       <CardMedia
         component="img"
         image={props.image}
         title={"スケジュール" + props.id}
         onClick={handleClickOpen}
-        style={{ height: "50vh" }}
       />
       <SimpleDialog
         imageValue={props.image}
         open={open}
         onClose={handleClose}
       />
-    </div>
+    </Box>
   );
 }

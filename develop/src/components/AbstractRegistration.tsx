@@ -22,7 +22,7 @@ function AbstractRegistration() {
           textAlign="center"
           alignItems="center"
           sx={{ mx: "auto" }}
-          mb={6}
+          mb={12}
           className="animate__animated animate__fadeInUp"
         >
           <Grid item mb={"4vh"}>

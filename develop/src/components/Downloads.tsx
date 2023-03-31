@@ -36,28 +36,27 @@ function Downloads() {
         direction="column"
         justifyContent="center"
         alignItems="center"
-        mb={6}
+        mb={12}
       >
-        <Grid item xs={12} md={6}>
+        <Grid item>
           {inView && (
             <Typography variant="h4" align="center" mb={3}>
               各種ダウンロード
             </Typography>
           )}
         </Grid>
-        <Grid
-          item
-          container
-          justifyContent="center"
-          alignItems="center"
-          xs={12}
-          md={6}
-        >
-          <Grid item container justifyContent="space-between" xs={12} md={6}>
-            {dowonloadInfo.map((item: any, _index) => {
-              return (
-                <ListItem disablePadding key={_index}>
-                  <Grid item container>
+        <Grid item>
+          <Box component={"div"}>
+            <Grid
+              container
+              justifyContent="space-between"
+              xs={12}
+              md={8}
+              mx="auto"
+            >
+              {dowonloadInfo.map((item: any, _index) => {
+                return (
+                  <ListItem disablePadding key={_index}>
                     <ListItemButton
                       sx={{
                         borderBottom: 0.5,
@@ -66,23 +65,24 @@ function Downloads() {
                       disableRipple
                     >
                       <Grid
-                        item
                         container
                         flexDirection="column"
                         justifyContent="space-between"
                       >
-                        <ListItemText
-                          primary={item[0]}
-                          primaryTypographyProps={{
-                            color: "secondary",
-                          }}
-                        />
-                        <ListItemText
-                          primary={item[1]}
-                          primaryTypographyProps={{
-                            color: "secondary",
-                          }}
-                        />
+                        <Box component="div">
+                          <ListItemText
+                            primary={item[0]}
+                            primaryTypographyProps={{
+                              color: "secondary",
+                            }}
+                          />
+                          <ListItemText
+                            primary={item[1]}
+                            primaryTypographyProps={{
+                              color: "secondary",
+                            }}
+                          />
+                        </Box>
                       </Grid>
                       <Grid item>
                         <IconButton
@@ -94,11 +94,11 @@ function Downloads() {
                         </IconButton>
                       </Grid>
                     </ListItemButton>
-                  </Grid>
-                </ListItem>
-              );
-            })}
-          </Grid>
+                  </ListItem>
+                );
+              })}
+            </Grid>
+          </Box>
         </Grid>
       </Grid>
     </Box>
