@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/https://github.com/STSocietyOitaConference/develop.git/static/css/main.0b79e6dd.css",
-    "main.js": "/https://github.com/STSocietyOitaConference/develop.git/static/js/main.de01dd2c.js",
-    "static/js/787.28cb0dcd.chunk.js": "/https://github.com/STSocietyOitaConference/develop.git/static/js/787.28cb0dcd.chunk.js",
-    "static/media/sampleImage_cat.jpg": "/https://github.com/STSocietyOitaConference/develop.git/static/media/sampleImage_cat.9afbea18baf5067ec1d0.jpg",
-    "static/media/sample2.jpg": "/https://github.com/STSocietyOitaConference/develop.git/static/media/sample2.6b11a30632e85cfcf95b.jpg",
-    "static/media/sampleImage_dog.jpg": "/https://github.com/STSocietyOitaConference/develop.git/static/media/sampleImage_dog.94a360199aab90b17f1f.jpg",
-    "index.html": "/https://github.com/STSocietyOitaConference/develop.git/index.html",
-    "main.0b79e6dd.css.map": "/https://github.com/STSocietyOitaConference/develop.git/static/css/main.0b79e6dd.css.map",
-    "main.de01dd2c.js.map": "/https://github.com/STSocietyOitaConference/develop.git/static/js/main.de01dd2c.js.map",
-    "787.28cb0dcd.chunk.js.map": "/https://github.com/STSocietyOitaConference/develop.git/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "https://stsocietyoitaconference.github.io/develop/static/css/main.0b79e6dd.css",
+    "main.js": "https://stsocietyoitaconference.github.io/develop/static/js/main.3d708f10.js",
+    "static/js/787.28cb0dcd.chunk.js": "https://stsocietyoitaconference.github.io/develop/static/js/787.28cb0dcd.chunk.js",
+    "static/media/sampleImage_cat.jpg": "https://stsocietyoitaconference.github.io/develop/static/media/sampleImage_cat.9afbea18baf5067ec1d0.jpg",
+    "static/media/sample2.jpg": "https://stsocietyoitaconference.github.io/develop/static/media/sample2.6b11a30632e85cfcf95b.jpg",
+    "static/media/sampleImage_dog.jpg": "https://stsocietyoitaconference.github.io/develop/static/media/sampleImage_dog.94a360199aab90b17f1f.jpg",
+    "index.html": "https://stsocietyoitaconference.github.io/develop/index.html",
+    "main.0b79e6dd.css.map": "https://stsocietyoitaconference.github.io/develop/static/css/main.0b79e6dd.css.map",
+    "main.3d708f10.js.map": "https://stsocietyoitaconference.github.io/develop/static/js/main.3d708f10.js.map",
+    "787.28cb0dcd.chunk.js.map": "https://stsocietyoitaconference.github.io/develop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0b79e6dd.css",
-    "static/js/main.de01dd2c.js"
+    "static/js/main.3d708f10.js"
   ]
 }
