@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, CardMedia, Grid, Link, Box } from "@mui/material";
 import SampleImage1 from "../assets/advertisement/sample1.jpg";
+import SampleImage2 from "../assets/advertisement/banner_sample.png";
 import { useInView } from "react-intersection-observer";
 import "animate.css";
 function Advertisement() {
@@ -11,34 +12,34 @@ function Advertisement() {
   });
   const adList = [
     {
-      name: "うまるちゃん",
-      image: SampleImage1,
-      url: "http://banner.keizine.net/archives/7760/",
+      name: "SampleImage",
+      image: SampleImage2,
+      url: "http://www.oita-st.com/",
     },
     {
-      name: "うまるちゃん",
-      image: SampleImage1,
-      url: "http://banner.keizine.net/archives/7760/",
+      name: "SampleImage",
+      image: SampleImage2,
+      url: "http://www.oita-st.com/",
     },
     {
-      name: "うまるちゃん",
-      image: SampleImage1,
-      url: "http://banner.keizine.net/archives/7760/",
+      name: "SampleImage",
+      image: SampleImage2,
+      url: "http://www.oita-st.com/",
     },
     {
-      name: "うまるちゃん",
-      image: SampleImage1,
-      url: "http://banner.keizine.net/archives/7760/",
+      name: "SampleImage",
+      image: SampleImage2,
+      url: "http://www.oita-st.com/",
     },
     {
-      name: "うまるちゃん",
-      image: SampleImage1,
-      url: "http://banner.keizine.net/archives/7760/",
+      name: "SampleImage",
+      image: SampleImage2,
+      url: "http://www.oita-st.com/",
     },
     {
-      name: "うまるちゃん",
-      image: SampleImage1,
-      url: "http://banner.keizine.net/archives/7760/",
+      name: "SampleImage",
+      image: SampleImage2,
+      url: "http://www.oita-st.com/",
     },
   ];
   return (

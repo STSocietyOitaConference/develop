@@ -17,13 +17,13 @@ function Title() {
       >
         <Grid item className="animate__animated animate__fadeIn">
           <ListItemText
-            primary="第12回日本言語聴覚士協会 九州地区学術集会 大分大会"
+            primary="大会タイトル"
             primaryTypographyProps={{
               variant: "h4",
               fontWeight: "bold",
               textAlign: "center",
             }}
-            secondary="2022年1月29日〜30日"
+            secondary="YYYY年MM月DD日〜DD日"
             secondaryTypographyProps={{
               variant: "h6",
               textAlign: "center",
@@ -37,7 +37,7 @@ function Title() {
           mb={6}
         >
           <ListItemText
-            primary="つむぐ"
+            primary="メインタイトル"
             primaryTypographyProps={{
               variant: "h3",
               fontWeight: "bold",

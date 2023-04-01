@@ -40,10 +40,10 @@ function Greeting() {
               variant="subtitle1"
               color="secondary"
             >
-              第10回日本言語聴覚士協会九州地区学術集会福岡大会
+              大会名
             </Typography>
             <Typography variant="subtitle1" color="secondary">
-              大会長　佐藤文保
+              大会長　〇〇〇〇
             </Typography>
             <Typography
               sx={{

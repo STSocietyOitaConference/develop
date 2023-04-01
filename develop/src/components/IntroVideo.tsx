@@ -16,7 +16,6 @@ function IntroVideo() {
     width: "320",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
     },
   };
   const largeOpts: YouTubeProps["opts"] = {
