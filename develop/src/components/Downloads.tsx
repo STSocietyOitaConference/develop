@@ -3,14 +3,12 @@ import React from "react";
 import {
   Typography,
   Grid,
-  List,
   ListItem,
   ListItemButton,
   ListItemText,
   IconButton,
   Box,
 } from "@mui/material";
-import Button from "@mui/material/Button";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import { useInView } from "react-intersection-observer";
 import "animate.css";
@@ -47,13 +45,7 @@ function Downloads() {
         </Grid>
         <Grid item>
           <Box component={"div"}>
-            <Grid
-              container
-              justifyContent="space-between"
-              xs={12}
-              md={8}
-              mx="auto"
-            >
+            <Grid container justifyContent="space-between" mx="auto">
               {dowonloadInfo.map((item: any, _index) => {
                 return (
                   <ListItem disablePadding key={_index}>
@@ -64,34 +56,33 @@ function Downloads() {
                       }}
                       disableRipple
                     >
-                      <Grid
-                        container
-                        flexDirection="column"
-                        justifyContent="space-between"
-                      >
-                        <Box component="div">
-                          <ListItemText
-                            primary={item[0]}
-                            primaryTypographyProps={{
-                              color: "secondary",
-                            }}
-                          />
-                          <ListItemText
-                            primary={item[1]}
-                            primaryTypographyProps={{
-                              color: "secondary",
-                            }}
-                          />
-                        </Box>
-                      </Grid>
-                      <Grid item>
-                        <IconButton
-                          color="primary"
-                          aria-label="upload picture"
-                          component="label"
-                        >
-                          <FileDownloadOutlinedIcon />
-                        </IconButton>
+                      <Grid container justifyContent="space-between">
+                        <Grid item>
+                          <Box component="div">
+                            <ListItemText
+                              primary={item[0]}
+                              primaryTypographyProps={{
+                                color: "secondary",
+                              }}
+                            />
+                            <ListItemText
+                              primary={item[1]}
+                              primaryTypographyProps={{
+                                color: "secondary",
+                              }}
+                            />
+                          </Box>
+                        </Grid>
+
+                        <Grid item>
+                          <IconButton
+                            color="primary"
+                            aria-label="upload picture"
+                            component="label"
+                          >
+                            <FileDownloadOutlinedIcon />
+                          </IconButton>
+                        </Grid>
                       </Grid>
                     </ListItemButton>
                   </ListItem>
